@@ -155,45 +155,45 @@ exports.getUserDetails = async (req, res) => {
 // ================ Update User profile Image ================
 exports.updateUserProfileImage = async (req, res) => {
     try {
-        const profileImage = req.files?.profileImage;
+        // 1. Check if file exists
+        const displayPicture = req.files.displayPicture; // Make sure this key matches your frontend
+        if (!displayPicture) {
+            return res.status(400).json({ success: false, message: "No file uploaded" });
+        }
+
         const userId = req.user.id;
+        
+        // 2. Declare the variable and wait for the upload
+        const imageUpload = await uploadImageToCloudinary(
+            displayPicture,
+            process.env.FOLDER_NAME,
+            1000,
+            1000
+        );
 
-        // validation
-        // console.log('profileImage = ', profileImage)
+        console.log(imageUpload);
 
-        // upload imga eto cloudinary
-        const image = await uploadImageToCloudinary(profileImage,
-            process.env.FOLDER_NAME, 1000, 1000);
-
-        // console.log('image url - ', image);
-
-        // update in DB 
-        const updatedUserDetails = await User.findByIdAndUpdate(userId,
-            { image: image.secure_url },
+        // 3. Update the DB
+        const updatedProfile = await User.findByIdAndUpdate(
+            { _id: userId },
+            { image: imageUpload.secure_url },
             { new: true }
-        )
-            .populate({
-                path: 'additionalDetails'
+        );
 
-            })
-
-        // success response
-        res.status(200).json({
+        res.send({
             success: true,
             message: `Image Updated successfully`,
-            data: updatedUserDetails,
-        })
-    }
-    catch (error) {
-        console.log('Error while updating user profile image');
-        console.log(error);
+            data: updatedProfile,
+        });
+
+    } catch (error) {
+        console.log("Error while updating user profile image", error);
         return res.status(500).json({
             success: false,
-            error: error.message,
-            message: 'Error while updating user profile image',
-        })
+            message: error.message,
+        });
     }
-}
+};
 
 
 

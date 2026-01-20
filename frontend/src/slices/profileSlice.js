@@ -1,8 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit"
 
 const initialState = {
-    user: localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : null,
-    loading: false,
+  // Ensure the key name "user" matches exactly what you use in setItem
+  user: localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")) : null,
+  loading: false,
 };
 
 // Problem occured and solved
@@ -18,6 +19,8 @@ const profileSlice = createSlice({
     reducers: {
         setUser(state, value) {
             state.user = value.payload;
+            // Sync to local storage immediately whenever state changes
+            localStorage.setItem("user", JSON.stringify(value.payload));
         },
         setLoading(state, value) {
             state.loading = value.payload

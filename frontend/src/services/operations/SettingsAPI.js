@@ -16,9 +16,8 @@ const {
 
 // ================ update User Profile Image  ================
 export function updateUserProfileImage(token, formData) {
-  return async (dispatch) => {
+  return async (dispatch, getState) => { // Added getState to access current user info
     const toastId = toast.loading("Loading...")
-
     try {
       const response = await apiConnector(
         "PUT",
@@ -29,17 +28,20 @@ export function updateUserProfileImage(token, formData) {
           Authorization: `Bearer ${token}`,
         }
       )
-      console.log("UPDATE_DISPLAY_PICTURE_API API RESPONSE............", response);
 
       if (!response.data.success) {
         throw new Error(response.data.message)
       }
-      toast.success("Display Picture Updated Successfully")
-      dispatch(setUser(response.data.data));
 
-      // below line is must - if not code - then as we refresh the page after changing profile image then old profile image will show 
-      // as we only changes in user(store) not in localStorage
-      localStorage.setItem("user", JSON.stringify(response.data.data));
+      toast.success("Display Picture Updated Successfully")
+      
+      // Get current user from Redux state to ensure we don't lose other fields
+      const { user } = getState().profile;
+      const updatedUser = { ...user, image: response.data.data.image }; 
+
+      dispatch(setUser(updatedUser));
+      localStorage.setItem("user", JSON.stringify(updatedUser));
+
     } catch (error) {
       console.log("UPDATE_DISPLAY_PICTURE_API API ERROR............", error)
       toast.error("Could Not Update Profile Picture")
@@ -73,8 +75,19 @@ export function updateProfile(token, formData) {
       localStorage.setItem("user", JSON.stringify({ ...response.data.updatedUserDetails, image: userImage }));
       toast.success("Profile Updated Successfully")
     } catch (error) {
-      console.log("UPDATE_PROFILE_API API ERROR............", error)
-      toast.error("Could Not Update Profile")
+      console.log("UPDATE_PROFILE_API API ERROR............", error);
+  
+      // Check if the error is a 401 Unauthorized
+      if (error.response && error.response.status === 401) {
+        toast.error("Session Expired. Please login again.");
+        // Clear local storage and reset auth state
+        localStorage.removeItem("token");
+        localStorage.removeItem("user");
+        // You might need to dispatch a logout action here
+        window.location.href = "/login"; 
+      } else {
+        toast.error("Could Not Update Profile");
+      }
     }
     toast.dismiss(toastId)
   }
