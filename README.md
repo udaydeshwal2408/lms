@@ -1,16 +1,9 @@
-Guyss Do Support me Giving a Star ⭐
-
 # Project Description 📝
-Learnhub is a fully functional ed-tech platform that enables users to create, consume, and rate educational content. <br/>
+LearnX is a fully functional ed-tech platform that enables users to create, consume, and rate educational content. <br/>
 The platform is built using the **MERN stack**, which includes ReactJS, NodeJS, MongoDB, and ExpressJS.
 
-<hr/>
 
-<h2>Live link 🌍📡 - [https://learnhub-by-harsh.vercel.app/]</h2>
-<hr/>
-
-
-<img width='100%' src='https://github.com/Aniruddha-Gade/Study-Notion-EdTech__MERN-Stack/blob/main/screenshots/home1.png' />
+<img width='100%' src='./screenshots/home1.png' />
 
 
 
@@ -19,7 +12,7 @@ The platform is built using the **MERN stack**, which includes ReactJS, NodeJS, 
 
 | Section                 | Description                                  |
 |-------------------------|----------------------------------------------|
-| [StudyNotion Aim](#studynotion-aim-)        | 📚 Overview of StudyNotion's goals            |
+| [Learnx Aim](#LearnX-aim-)        | 📚 Overview of Learnx's goals            |
 | [Tech Stack](#tech-stack-)             | 💻🔧 Technologies used in the project         |
 | [System Architecture](#system-architecture-)    | 🏰 Overview of the system architecture      |
 | [Architecture Diagram](#architecture-diagram-)   | 🏗️ Diagram illustrating the architecture   |
@@ -33,36 +26,36 @@ The platform is built using the **MERN stack**, which includes ReactJS, NodeJS, 
 
 
 
-## StudyNotion Aim 📚 
+## L Aim 📚 
 <br/>
 1️⃣ A seamless and interactive learning experience for students, making education more accessible and engaging.<br/>
 2️⃣ A platform for instructors to showcase their expertise and connect with learners across the globe.<br/>
 
 <br/>
 <br/>
-<img width='100%' src='https://github.com/Aniruddha-Gade/Study-Notion-EdTech__MERN-Stack/blob/main/screenshots/Tech%20stack%20logo/gif.gif' />
+<img width='100%' src='./screenshots/Tech stack logo/gif.gif' />
 
 
 ## Tech Stack 💻🔧 
 
 ## Frontend 🎨 : 
-<code title="React.js"><img height="40" src="https://github.com/Aniruddha-Gade/Study-Notion-EdTech__MERN-Stack/blob/main/screenshots/Tech%20stack%20logo/react%20ogo.png"></code>
-<code title="Vite"><img height="40" src="https://github.com/Aniruddha-Gade/Study-Notion-EdTech__MERN-Stack/blob/main/screenshots/Tech%20stack%20logo/Vitejs-logo.png"></code>
-<code title="Redux.js"><img height="35" src="https://github.com/Aniruddha-Gade/Study-Notion-EdTech__MERN-Stack/blob/main/screenshots/Tech%20stack%20logo/redux-logo.png"></code>
-<code title="css"><img height="40" src="https://github.com/Aniruddha-Gade/Study-Notion-EdTech__MERN-Stack/blob/main/screenshots/Tech%20stack%20logo/css%20logo.png"></code>
-<code title="Tailwind css"><img height="35" src="https://github.com/Aniruddha-Gade/Study-Notion-EdTech__MERN-Stack/blob/main/screenshots/Tech%20stack%20logo/tailwind%20css%20logo.png"></code>
+<code title="React.js"><img height="40" src="./screenshots/Tech stack logo/react ogo.png"></code>
+<code title="Vite"><img height="40" src="./screenshots/Tech stack logo/Vitejs-logo.png"></code>
+<code title="Redux.js"><img height="35" src="./screenshots/Tech stack logo/redux-logo.png"></code>
+<code title="css"><img height="40" src="./screenshots/Tech stack logo/css logo.png"></code>
+<code title="Tailwind css"><img height="35" src="./screenshots/Tech stack logo/tailwind css logo.png"></code>
 
 
 ## Backend ⚙️ :
-<code title="Nodejs"><img height="50" src="https://github.com/Aniruddha-Gade/Study-Notion-EdTech__MERN-Stack/blob/main/screenshots/Tech%20stack%20logo/nodejs-logo.png"></code>
-<code title="Express"><img height="70" src="https://github.com/Aniruddha-Gade/Study-Notion-EdTech__MERN-Stack/blob/main/screenshots/Tech%20stack%20logo/express%20logo.png"></code>
+<code title="Nodejs"><img height="50" src="./screenshots/Tech stack logo/nodejs-logo.png"></code>
+<code title="Express"><img height="70" src="./screenshots/Tech stack logo/express logo.png"></code>
 
 
 ## Database 🛢️ :
-<code title="Mongodb"><img height="40" src="https://github.com/Aniruddha-Gade/Study-Notion-EdTech__MERN-Stack/blob/main/screenshots/Tech%20stack%20logo/mongodb%20logo.png"></code>
+<code title="Mongodb"><img height="40" src="./screenshots/Tech stack logo/mongodb logo.png"></code>
 
 ## Cloudinary Integration ☁️
-<code title="Mongodb"><img height="40" src="https://github.com/Aniruddha-Gade/Study-Notion-EdTech__MERN-Stack/blob/main/screenshots/Tech%20stack%20logo/cloudinary-logo.jpg"></code>
+<code title="Mongodb"><img height="40" src="./screenshots/Tech stack logo/cloudinary-logo.jpg"></code>
 
 <hr/>
 
@@ -71,7 +64,7 @@ The platform is built using the **MERN stack**, which includes ReactJS, NodeJS, 
 
 ## System Architecture 🏰
 <br/>
-☝ The StudyNotion ed-tech platform consists of three main components:  <br/>
+☝ The LearnX ed-tech platform consists of three main components:  <br/>
 The front end, the back end, and the database. The platform follows a client-server architecture, with the front end serving as the client and the back end and database serving as the server.
 
 🎨 Front-end  <br/>
@@ -87,13 +80,13 @@ The database for the platform is built using MongoDB, which is a NoSQL database 
 
 ## Architecture Diagram 🏗️
 <br/>
-Here is a high-level diagram that illustrates the architecture of the StudyNotion ed-tech platform:
-<img width='60%' src='https://github.com/Aniruddha-Gade/Study-Notion-EdTech__MERN-Stack/blob/main/screenshots/Architecture%20Diagram.png' />
+Here is a high-level diagram that illustrates the architecture of the LearnX ed-tech platform:
+<img width='60%' src='./screenshots/Architecture Diagram.png' />
 
 
 <hr/>
 
-#### The front end of StudyNotion has all the necessary pages that an ed-tech platform should have. Some of these pages are: 
+#### The front end of LearnX has all the necessary pages that an ed-tech platform should have. Some of these pages are: 
 
 For Students:
 - **Homepage 🏠:** A brief introduction to the platform with links to the course list and user details and random background.
@@ -121,14 +114,14 @@ The back-end of the platform is built using NodeJS and ExpressJS, providing APIs
 - **User Authentication and Authorization 🔐:** Students and instructors can sign up and log in to the platform using their email addresses and passwords. The platform also supports OTP (One-Time Password) verification and forgot password functionality for added security.
 - **Course Management 🛠️:** Instructors can create, read, update, and delete courses, as well as manage course content and media. Students can view and rate courses.
 - **Payment Integration 💳:** Students will purchase and enroll in courses by completing the checkout flow, followed by Razorpay integration for payment handling.
-- **Cloud-based Media Management ☁️ :** StudyNotion uses Cloudinary, a cloud-based media management service, to store and manage all media content, including images, videos, and documents.
+- **Cloud-based Media Management ☁️ :** LearnX uses Cloudinary, a cloud-based media management service, to store and manage all media content, including images, videos, and documents.
 - **Markdown Formatting ✍️:** Course content in document format is stored in Markdown format, allowing for easier display and rendering on the front-end.
 
 
 
 #### Data Models and Database Schema
 
-The back-end of StudyNotion uses several data models and database schemas to manage data, including:
+The back-end of LearnX uses several data models and database schemas to manage data, including:
 
 - **Student Schema 🧑‍🎓:** Includes fields such as name, email, password, and course details for each student.
 - **Instructor Schema 👩‍🏫:** Includes fields such as name, email, password, and course details for each instructor.
@@ -139,7 +132,7 @@ The back-end of StudyNotion uses several data models and database schemas to man
 The database for the platform is built using MongoDB, a NoSQL database that provides a flexible and scalable data storage solution. MongoDB allows for the storage of unstructured and semi-structured data. The database stores the course content, user data, and other relevant information related to the platform.
 
 ## Schema 📋
-<img width='100%' src='https://github.com/Aniruddha-Gade/Study-Notion-EdTech__MERN-Stack/blob/main/screenshots/Schema.png' />
+<img width='100%' src='./screenshots/Schema.png' />
 
 <hr/>
 
@@ -180,76 +173,76 @@ Utilized several React hooks for efficient state management and dynamic behavior
 ##  🖥️ Screen Preview :
 
 # Random Home Page Background 🏠 
-<img width='100%' src='https://github.com/Aniruddha-Gade/Study-Notion-EdTech__MERN-Stack/blob/main/screenshots/home3.png' />
-<img width='100%' src='https://github.com/Aniruddha-Gade/Study-Notion-EdTech__MERN-Stack/blob/main/screenshots/home4.png' />
+<img width='100%' src='./screenshots/home3.png' />
+<img width='100%' src='./screenshots/home4.png' />
 
 # About Page
-<img width='100%' src='https://github.com/Aniruddha-Gade/Study-Notion-EdTech__MERN-Stack/blob/main/screenshots/about.png' />
+<img width='100%' src='./screenshots/about.png' />
 
 # Contact Page
-<img width='100%' src='https://github.com/Aniruddha-Gade/Study-Notion-EdTech__MERN-Stack/blob/main/screenshots/contact.png' />
+<img width='100%' src='./screenshots/contact.png' />
 
 # Forgot passwornd
-<img width='100%' src='https://github.com/Aniruddha-Gade/Study-Notion-EdTech__MERN-Stack/blob/main/screenshots/forgot%20pass.png' />
+<img width='100%' src='./screenshots/forgot pass.png' />
 
 # Dashboard
-<img width='100%' src='https://github.com/Aniruddha-Gade/Study-Notion-EdTech__MERN-Stack/blob/main/screenshots/dashboard.png' />
+<img width='100%' src='./screenshots/dashboard.png' />
 
 # Edit Profile
-<img width='100%' src='https://github.com/Aniruddha-Gade/Study-Notion-EdTech__MERN-Stack/blob/main/screenshots/edit%20profile.png' />
+<img width='100%' src='./screenshots/edit profile.png' />
 
 
 # Add Course
-<img width='100%' src='https://github.com/Aniruddha-Gade/Study-Notion-EdTech__MERN-Stack/blob/main/screenshots/add%20course.png' />
+<img width='100%' src='./screenshots/add course.png' />
 
 # Edit Course
-<img width='100%' src='https://github.com/Aniruddha-Gade/Study-Notion-EdTech__MERN-Stack/blob/main/screenshots/edit%20course.png' />
+<img width='100%' src='./screenshots/edit course.png' />
 
 # Course Details 1
-<img width='100%' src='https://github.com/Aniruddha-Gade/Study-Notion-EdTech__MERN-Stack/blob/main/screenshots/course%20details1.png' />
+<img width='100%' src='./screenshots/course details1.png' />
 
 # Course Details 2
-<img width='100%' src='https://github.com/Aniruddha-Gade/Study-Notion-EdTech__MERN-Stack/blob/main/screenshots/course%20details2.png' />
+<img width='100%' src='./screenshots/course details2.png' />
 
 # Add Review
-<img width='100%' src='https://github.com/Aniruddha-Gade/Study-Notion-EdTech__MERN-Stack/blob/main/screenshots/add%20review.png' />
+<img width='100%' src='./screenshots/add review.png' />
 
 # Cart1
-<img width='100%' src='https://github.com/Aniruddha-Gade/Study-Notion-EdTech__MERN-Stack/blob/main/screenshots/cart1.png' />
+<img width='100%' src='./screenshots/cart1.png' />
 
 
 
 
 # Enrolled Courses 1
-<img width='100%' src='https://github.com/Aniruddha-Gade/Study-Notion-EdTech__MERN-Stack/blob/main/screenshots/enrolled%20courses1.png' />
+<img width='100%' src='./screenshots/enrolled courses1.png' />
 
 # Enrolled Courses 2
-<img width='100%' src='https://github.com/Aniruddha-Gade/Study-Notion-EdTech__MERN-Stack/blob/main/screenshots/enrolled%20courses2.png' />
+<img width='100%' src='./screenshots/enrolled courses2.png' />
 
 # Instructor Data 1
-<img width='100%' src='https://github.com/Aniruddha-Gade/Study-Notion-EdTech__MERN-Stack/blob/main/screenshots/instrctor%20data1.png' />
+<img width='100%' src='./screenshots/instrctor data1.png' />
 
 # Instructor Data 2
-<img width='100%' src='https://github.com/Aniruddha-Gade/Study-Notion-EdTech__MERN-Stack/blob/main/screenshots/instrctor%20data2.png' />
+<img width='100%' src='./screenshots/instrctor data2.png' />
 
 # My Courses 1
-<img width='100%' src='https://github.com/Aniruddha-Gade/Study-Notion-EdTech__MERN-Stack/blob/main/screenshots/myCourses1.png' />
+<img width='100%' src='./screenshots/myCourses1.png' />
 
 # My Courses 2
-<img width='100%' src='https://github.com/Aniruddha-Gade/Study-Notion-EdTech__MERN-Stack/blob/main/screenshots/myCourses2.png' />
+<img width='100%' src='./screenshots/myCourses2.png' />
 
 # View Courses 1
-<img width='100%' src='https://github.com/Aniruddha-Gade/Study-Notion-EdTech__MERN-Stack/blob/main/screenshots/view%20course1.png' />
+<img width='100%' src='./screenshots/view course1.png' />
 
 # View Courses 2
-<img width='100%' src='https://github.com/Aniruddha-Gade/Study-Notion-EdTech__MERN-Stack/blob/main/screenshots/view%20course2.png' />
+<img width='100%' src='./screenshots/view course2.png' />
 
 
 # Delete Account
-<img width='100%' src='https://github.com/Aniruddha-Gade/Study-Notion-EdTech__MERN-Stack/blob/main/screenshots/delete%20account.png' />
+<img width='100%' src='./screenshots/delete account.png' />
 
 # Footer
-<img width='100%' src='https://github.com/Aniruddha-Gade/Study-Notion-EdTech__MERN-Stack/blob/main/screenshots/footer.png' />
+<img width='100%' src='./screenshots/footer.png' />
 
 
 

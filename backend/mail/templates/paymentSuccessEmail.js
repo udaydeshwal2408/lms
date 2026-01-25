@@ -14,8 +14,8 @@ const paymentSuccessEmail = (name, amount, orderId, paymentId) => {
           <p><strong>Amount Paid:</strong> ₹${amount}</p>
         </div>
         <p>You will receive a separate enrollment confirmation email for your courses shortly.</p>
-        <p>Thank you for choosing StudyNotion!</p>
-        <p style="margin-top: 30px;">Best regards,<br /><strong>StudyNotion Team</strong></p>
+        <p>Thank you for choosing LearnX!</p>
+        <p style="margin-top: 30px;">Best regards,<br /><strong>LearnX Team</strong></p>
       </body>
     </html>
   `;
