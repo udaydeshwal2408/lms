@@ -88,7 +88,7 @@ exports.signup = async (req, res) => {
         if (password !== confirmPassword) {
             return res.status(400).json({
                 success: false,
-                messgae: 'passowrd & confirm password does not match, Please try again..!'
+                message: 'passowrd & confirm password does not match, Please try again..!'
             });
         }
 
@@ -136,8 +136,7 @@ exports.signup = async (req, res) => {
             gender: null, dateOfBirth: null, about: null, contactNumber: null
         });
 
-        let approved = "";
-        approved === "Instructor" ? (approved = false) : (approved = true);
+        let approved = accountType === "Instructor" ? false : true;
 
         // create entry in DB
         const userData = await User.create({
