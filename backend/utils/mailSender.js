@@ -11,7 +11,7 @@ const mailSender = async (email, title, body) => {
         });
 
         const info = await transporter.sendMail({
-            from: 'LearnX || by Aniruddha Gade',
+            from: 'LearnX || by Uday Deshwal',
             to: email,
             subject: title,
             html: body

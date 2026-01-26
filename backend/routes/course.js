@@ -92,7 +92,7 @@ router.post("/editCourse", auth, isInstructor, editCourse)
 router.delete("/deleteCourse", auth, isInstructor, deleteCourse)
 
 // update Course Progress
-router.post("/updateCourseProgress", auth, isStudent, updateCourseProgress)
+router.post("/updateCourseProgress",auth , isStudent, updateCourseProgress)
 
 
 
