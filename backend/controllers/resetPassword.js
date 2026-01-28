@@ -68,7 +68,7 @@ exports.resetPassword = async (req, res) => {
         if (!token || !password || !confirmPassword) {
             return res.status(401).json({
                 success: false,
-                message: "All fiels are required...!"
+                message: "All fiels are required..!"
             });
         }
 
