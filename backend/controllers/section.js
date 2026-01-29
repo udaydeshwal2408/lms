@@ -38,7 +38,6 @@ exports.createSection = async (req, res) => {
 
             })
 
-        // above -- populate remaining 
 
         res.status(200).json({
             success: true,
