@@ -145,7 +145,7 @@ const enrollStudents = async (courses, userId, res) => {
             // Find the course and enroll the student in it
             const enrolledCourse = await Course.findOneAndUpdate(
                 { _id: courseId },
-                { $push: { studentsEnrolled: userId } },
+                { $addToSet: { studentsEnrolled: userId } },
                 { new: true },
             );
 
@@ -164,13 +164,12 @@ const enrollStudents = async (courses, userId, res) => {
             });
 
             // Find the student and add the course to their list of enrolled courses
+            // Change this section:
             const enrolledStudent = await User.findByIdAndUpdate(
                 userId,
                 {
-                    $push: {
-                        courses: courseId,
-                        courseProgress: courseProgress._id,
-                    },
+                    $addToSet: { courses: courseId }, // Changed $push to $addToSet
+                    $push: { courseProgress: courseProgress._id }, // Keep this as $push since progress is unique per enrollment
                 },
                 { new: true }
             );

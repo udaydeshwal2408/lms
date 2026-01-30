@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
 import React from "react";
 
 // Importing React Icons
@@ -5,6 +7,7 @@ import { HiUsers } from "react-icons/hi";
 import { ImTree } from "react-icons/im";
 
 
+// eslint-disable-next-line react/prop-types
 const CourseCard = ({ cardData, currentCard, setCurrentCard }) => {
   return (
     <div
@@ -12,6 +15,7 @@ const CourseCard = ({ cardData, currentCard, setCurrentCard }) => {
         ? "bg-white shadow-[12px_12px_0_0] shadow-yellow-50"
         : "bg-richblack-800"
         }  text-richblack-25 h-[300px] box-border cursor-pointer`}
+      // eslint-disable-next-line react/prop-types
       onClick={() => setCurrentCard(cardData?.heading)}
     >
       <div className="border-b-[2px] border-richblack-400 border-dashed h-[80%] p-6 flex flex-col gap-3">
