@@ -14,17 +14,17 @@ import ExploreMore from '../components/core/HomePage/ExploreMore'
 import ReviewSlider from '../components/common/ReviewSlider'
 import Course_Slider from '../components/core/Catalog/Course_Slider'
 
-// Operations & Icons
+// Operations
 import { fetchCourseCategories } from '../services/operations/courseDetailsAPI'
 import { getCatalogPageData } from '../services/operations/pageAndComponentData'
+
+// Icons & Motion
 import { MdOutlineRateReview } from 'react-icons/md'
 import { FaArrowRight } from "react-icons/fa"
-
-// Framer Motion
 import { motion } from 'framer-motion'
 import { fadeIn } from './../components/common/motionFrameVarients';
 
-// Background random images
+// Background images
 import backgroundImg1 from '../assets/Images/random bg img/coding bg1.jpg'
 import backgroundImg2 from '../assets/Images/random bg img/coding bg2.jpg'
 import backgroundImg3 from '../assets/Images/random bg img/coding bg3.jpg'
@@ -45,27 +45,20 @@ const randomImges = [
 
 const Home = () => {
     const dispatch = useDispatch();
-    const { token } = useSelector((state) => state.auth); // Check authentication status
-
+    const { token } = useSelector((state) => state.auth);
     const [backgroundImg, setBackgroundImg] = useState(null);
     const [CatalogPageData, setCatalogPageData] = useState(null);
 
-    // Get background random images
     useEffect(() => {
         const bg = randomImges[Math.floor(Math.random() * randomImges.length)]
         setBackgroundImg(bg);
     }, [])
 
-    // Dynamic Category and Catalog Data Fetching
     useEffect(() => {
         const fetchCatalogPageData = async () => {
             try {
-                // Fetch categories from the live database instead of using a hardcoded ID
                 const categories = await fetchCourseCategories();
-                
-                // Get the ID of the first category available in the database
                 const category_id = categories?.[0]?._id;
-
                 if (category_id) {
                     const result = await getCatalogPageData(category_id, dispatch);
                     setCatalogPageData(result);
@@ -79,7 +72,6 @@ const Home = () => {
 
     return (
         <React.Fragment>
-            {/* Background random image */}
             <div>
                 <div className="w-full h-[450px] md:h-[650px] absolute top-0 left-0 opacity-[0.3] overflow-hidden object-cover ">
                     <img src={backgroundImg} alt="Background" className="w-full h-full object-cover " />
@@ -88,7 +80,6 @@ const Home = () => {
             </div>
 
             <div className='relative'>
-                {/* Section 1 */}
                 <div className='relative h-[450px] md:h-[550px] justify-center mx-auto flex flex-col w-11/12 max-w-maxContent items-center text-white '>
                     <Link to={"/signup"}>
                         <div className='z-0 group p-1 mx-auto rounded-full bg-richblack-800 font-bold text-richblack-200 transition-all duration-200 hover:scale-95 w-fit'>
@@ -99,18 +90,8 @@ const Home = () => {
                         </div>
                     </Link>
 
-                    <motion.div
-                        variants={fadeIn('left', 0.1)} initial='hidden' whileInView={'show'}
-                        className='text-center text-3xl lg:text-4xl font-semibold mt-7'
-                    >
+                    <motion.div variants={fadeIn('left', 0.1)} initial='hidden' whileInView={'show'} className='text-center text-3xl lg:text-4xl font-semibold mt-7'>
                         Empower Your Future with <HighlightText text={"Coding Skills"} />
-                    </motion.div>
-
-                    <motion.div
-                        variants={fadeIn('right', 0.1)} initial='hidden' whileInView={'show'}
-                        className=' mt-4 w-[90%] text-center text-base lg:text-lg font-bold text-richblack-300'
-                    >
-                        With our online coding courses, you can learn at your own pace, from anywhere in the world, and get access to a wealth of resources.
                     </motion.div>
 
                     <div className='flex flex-row gap-7 mt-8'>
@@ -119,19 +100,13 @@ const Home = () => {
                     </div>
                 </div>
 
-                {/* Animated Code Blocks */}
                 <div className='relative mx-auto flex flex-col w-11/12 max-w-maxContent items-center text-white justify-between'>
                     <CodeBlocks
                         position={"lg:flex-row"}
-                        heading={
-                            <div className='text-3xl lg:text-4xl font-semibold'>
-                                Unlock Your <HighlightText text={"coding potential "} /> with our online courses
-                            </div>
-                        }
-                        subheading={"Our courses are taught by industry experts with years of experience."}
+                        heading={<div className='text-3xl lg:text-4xl font-semibold'>Unlock Your <HighlightText text={"coding potential "} /> with our online courses</div>}
+                        subheading={"Learn from industry experts with hands-on projects."}
                         ctabtn1={{
                             btnText: "try it yourself",
-                            // Route to catalog if logged in, otherwise signup
                             linkto: token ? "/catalog/web-development" : "/signup",
                             active: true,
                         }}
@@ -143,74 +118,26 @@ const Home = () => {
 
                     <CodeBlocks
                         position={"lg:flex-row-reverse"}
-                        heading={
-                            <div className="w-[100%] text-3xl lg:text-4xl font-semibold lg:w-[50%]">
-                                Start <HighlightText text={"coding in seconds"} />
-                            </div>
-                        }
-                        subheading={"Go ahead, give it a try. Write real code from your very first lesson."}
+                        heading={<div className="text-3xl lg:text-4xl font-semibold lg:w-[50%]">Start <HighlightText text={"coding in seconds"} /></div>}
+                        subheading={"Write real code from your very first lesson."}
                         ctabtn1={{
                             btnText: "Continue Lesson",
                             linkto: token ? "/dashboard/enrolled-courses" : "/signup",
                             active: true,
                         }}
                         ctabtn2={{ btnText: "Learn More", linkto: "/signup", active: false }}
-                        codeblock={`import React from "react";\n import CTAButton from "./Button";\nimport TypeAnimation from "react-type";\nimport { FaArrowRight } from "react-icons/fa";\n\nconst Home = () => {\nreturn (\n<div>Home</div>\n)\n}\nexport default Home;`}
+                        codeblock={`import React from "react";\n import CTAButton from "./Button";\nimport { TypeAnimation } from "react-type";\n\nconst Home = () => {\nreturn (\n<div>Home</div>\n)\n}\nexport default Home;`}
                         codeColor={"text-white"}
                         backgroundGradient={"code-block2-grad"}
                     />
 
-                    {/* Course Sliders */}
                     <div className='mx-auto box-content w-full max-w-maxContentTab px- py-12 lg:max-w-maxContent'>
                         <h2 className='text-white mb-6 text-2xl '>Popular Picks for You 🏆</h2>
                         <Course_Slider Courses={CatalogPageData?.selectedCategory?.courses} />
                     </div>
-                    <div className=' mx-auto box-content w-full max-w-maxContentTab px- py-12 lg:max-w-maxContent'>
-                        <h2 className='text-white mb-6 text-2xl '>Top Enrollments Today 🔥</h2>
-                        <Course_Slider Courses={CatalogPageData?.mostSellingCourses} />
-                    </div>
-
+                    
                     <ExploreMore />
                 </div>
-
-                {/* Section 2 */}
-                <div className='bg-pure-greys-5 text-richblack-700 '>
-                    <div className='homepage_bg h-[310px]'>
-                        <div className='w-11/12 max-w-maxContent flex flex-col items-center justify-between gap-5 mx-auto'>
-                            <div className='h-[150px]'></div>
-                            <div className='flex flex-row gap-7 text-white '>
-                                <CTAButton active={true} linkto={"/catalog/web-development"}>
-                                    <div className='flex items-center gap-3'>Explore Full Catalog <FaArrowRight /></div>
-                                </CTAButton>
-                                <CTAButton active={false} linkto={"/signup"}>Learn more</CTAButton>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className='mx-auto w-11/12 max-w-maxContent flex flex-col items-center justify-between gap-7'>
-                        <div className='flex flex-col lg:flex-row gap-5 mb-10 mt-[95px]'>
-                            <div className='text-3xl lg:text-4xl font-semibold w-full lg:w-[45%]'>
-                                Get the Skills you need for a <HighlightText text={"Job that is in demand"} />
-                            </div>
-                            <div className='flex flex-col gap-10 w-full lg:w-[40%] items-start'>
-                                <div className='text-[16px]'>Modern learning requires more than just professional skills.</div>
-                                <CTAButton active={true} linkto={"/signup"}>Learn more</CTAButton>
-                            </div>
-                        </div>
-                        <TimelineSection />
-                        <LearningLanguageSection />
-                    </div>
-                </div>
-
-                {/* Section 3 */}
-                <div className='mt-14 w-11/12 mx-auto max-w-maxContent flex-col items-center justify-between gap-8 bg-richblack-900 text-white'>
-                    <InstructorSection />
-                    <h1 className="text-center text-3xl lg:text-4xl font-semibold mt-8 flex justify-center items-center gap-x-3">
-                        Reviews from other learners <MdOutlineRateReview className='text-yellow-25' />
-                    </h1>
-                    <ReviewSlider />
-                </div>
-
                 <Footer />
             </div >
         </React.Fragment>
