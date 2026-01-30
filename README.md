@@ -26,7 +26,7 @@ The platform is built using the **MERN stack**, which includes ReactJS, NodeJS, 
 
 
 
-## L Aim 📚 
+## LearnX Aim 📚 
 <br/>
 1️⃣ A seamless and interactive learning experience for students, making education more accessible and engaging.<br/>
 2️⃣ A platform for instructors to showcase their expertise and connect with learners across the globe.<br/>

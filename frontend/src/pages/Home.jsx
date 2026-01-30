@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from "react-router-dom"
 import { useDispatch } from 'react-redux';
-
+import { fetchCourseCategories } from '../services/operations/courseDetailsAPI'
 import HighlightText from '../components/core/HomePage/HighlightText'
 import CTAButton from "../components/core/HomePage/Button"
 import CodeBlocks from "../components/core/HomePage/CodeBlocks"
@@ -67,20 +67,29 @@ const Home = () => {
 
     // get courses data
     const [CatalogPageData, setCatalogPageData] = useState(null);
-    const categoryID = "6506c9dff191d7ffdb4a3fe2" // hard coded
     const dispatch = useDispatch();
 
     useEffect(() => {
-        const fetchCatalogPageData = async () => {
+    const fetchCatalogPageData = async () => {
+        try {
+            // 2. Use the existing operation function to get all categories
+            const categories = await fetchCourseCategories();
+            
+            // 3. Find the first category ID from the live database
+            // This replaces the hardcoded "6506c9dff191d..." string
+            const category_id = categories?.[0]?._id;
 
-            const result = await getCatalogPageData(categoryID, dispatch);
-            setCatalogPageData(result);
-            // console.log("page data ==== ",CatalogPageData);
+            if (category_id) {
+                // 4. Now fetch the actual page data with the dynamic ID
+                const result = await getCatalogPageData(category_id, dispatch);
+                setCatalogPageData(result);
+            }
+        } catch (error) {
+            console.log("CATALOG PAGE DATA ERROR....", error);
         }
-        if (categoryID) {
-            fetchCatalogPageData();
-        }
-    }, [categoryID])
+    }
+    fetchCatalogPageData();
+}, []);
 
 
     // console.log('================ CatalogPageData?.selectedCourses ================ ', CatalogPageData)
