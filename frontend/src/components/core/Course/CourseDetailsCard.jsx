@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
 import React from "react"
 import copy from "copy-to-clipboard"
 import { toast } from "react-hot-toast"

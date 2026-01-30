@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
 import React, { useEffect, useState } from "react"
 // Icons
 // import { FaRegStar, FaStar } from "react-icons/fa"
@@ -49,7 +51,7 @@ function Course_Card({ course, Height }) {
               /> */}
               <RatingStars Review_Count={avgReviewCount} />
               <span className="text-richblack-400">
-                {course?.ratingAndReviews?.length} Ratings
+                {course?.ratingAndReviews?.length} {course?.ratingAndReviews?.length > 1 ? "Ratings" : "Rating"}
               </span>
             </div>
             <p className="text-xl text-richblack-5">Rs. {course?.price}</p>
