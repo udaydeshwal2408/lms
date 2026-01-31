@@ -72,15 +72,15 @@ const Home = () => {
     }, [dispatch]);
 
     return (
-        <div className="flex flex-col min-h-screen"> {/* Wrapper to force footer to bottom */}
+        <div className="flex flex-col min-h-screen bg-richblack-900">
             {/* Background Image Container */}
-            <div className="absolute top-0 left-0 w-full h-[450px] md:h-[650px] opacity-[0.3] overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-[450px] md:h-[650px] opacity-[0.3] overflow-hidden pointer-events-none">
                 <img src={backgroundImg} alt="Background" className="w-full h-full object-cover" />
                 <div className="absolute left-0 bottom-0 w-full h-[250px] opacity_layer_bg"></div>
             </div>
 
             <div className='relative flex-grow'>
-                {/* Section 1 */}
+                {/* Section 1: Hero */}
                 <div className='relative h-[450px] md:h-[550px] justify-center mx-auto flex flex-col w-11/12 max-w-maxContent items-center text-white'>
                     <Link to={"/signup"}>
                         <div className='z-0 group p-1 mx-auto rounded-full bg-richblack-800 font-bold text-richblack-200 transition-all duration-200 hover:scale-95 w-fit'>
@@ -101,7 +101,7 @@ const Home = () => {
                     </div>
                 </div>
 
-                {/* Content Sections */}
+                {/* Section 2: Main Content Blocks */}
                 <div className='relative mx-auto flex flex-col w-11/12 max-w-maxContent items-center text-white'>
                     <CodeBlocks
                         position={"lg:flex-row"}
@@ -133,27 +133,30 @@ const Home = () => {
                         backgroundGradient={"code-block2-grad"}
                     />
 
-                    {/* Course Sliders */}
-                    <div className='mx-auto box-content w-full px-0 py-12'>
+                    {/* Course Sliders - Spaced correctly to avoid Footer overlap */}
+                    <div className='mx-auto box-content w-full px-0 py-16'>
                         <h2 className='text-white mb-6 text-2xl font-semibold'>Popular Picks for You 🏆</h2>
                         <Course_Slider Courses={CatalogPageData?.selectedCategory?.courses} />
                     </div>
                     
-                    {/* Add this back if you want to fix the gap in Screenshot 1 */}
-                    <div className='mx-auto box-content w-full px-0 py-12'>
+                    <div className='mx-auto box-content w-full px-0 py-16'>
                         <h2 className='text-white mb-6 text-2xl font-semibold'>Top Enrollments Today 🔥</h2>
                         <Course_Slider Courses={CatalogPageData?.mostSellingCourses} />
                     </div>
 
-                    <ExploreMore />
+                    {/* Explore More Section - Needs bottom margin before Footer */}
+                    <div className='mb-24 w-full'>
+                        <ExploreMore />
+                    </div>
                 </div>
             </div>
-            {/* Proper separation for Footer */}
-            <div className="relative z-10">
+
+            {/* Footer - Guaranteed to stay below all relative content */}
+            <div className='relative z-10'>
                 <Footer />
             </div>
         </div>
     )
 }
 
-export default Home;
+export default Home
