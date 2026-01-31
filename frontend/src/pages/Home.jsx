@@ -134,18 +134,18 @@ const Home = () => {
                     />
 
                     {/* Course Sliders */}
-                    <div className='mx-auto box-content w-full px-0 py-16'>
+                    <div className='mx-auto box-content w-full px-0 py-12'>
                         <h2 className='text-white mb-6 text-2xl font-semibold'>Popular Picks for You 🏆</h2>
                         <Course_Slider Courses={CatalogPageData?.selectedCategory?.courses} />
                     </div>
                     
-                    <div className='mx-auto box-content w-full px-0 py-16'>
+                    <div className='mx-auto box-content w-full px-0 py-12'>
                         <h2 className='text-white mb-6 text-2xl font-semibold'>Top Enrollments Today 🔥</h2>
                         <Course_Slider Courses={CatalogPageData?.mostSellingCourses} />
                     </div>
 
-                    {/* Explore More - THE CRITICAL FIX IS HERE */}
-                    <div className='relative w-full pb-[150px] lg:pb-[250px]'> 
+                    {/* Explore More - Pulling the section up */}
+                    <div className='relative w-full mt-[-20px] pb-32 lg:pb-48'>
                         <ExploreMore />
                     </div>
                 </div>
