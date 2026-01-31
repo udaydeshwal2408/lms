@@ -101,7 +101,7 @@ const Home = () => {
                     </div>
                 </div>
 
-                {/* Section 2: Main Content Blocks */}
+                {/* Section 2: Content Blocks */}
                 <div className='relative mx-auto flex flex-col w-11/12 max-w-maxContent items-center text-white'>
                     <CodeBlocks
                         position={"lg:flex-row"}
@@ -144,14 +144,14 @@ const Home = () => {
                         <Course_Slider Courses={CatalogPageData?.mostSellingCourses} />
                     </div>
 
-                    {/* Explore More - Pulling the section up */}
-                    <div className='relative w-full mt-[-20px] pb-32 lg:pb-48'>
+                    {/* Explore More - Corrected container */}
+                    <div className='relative w-full mt-10 mb-20'>
                         <ExploreMore />
                     </div>
                 </div>
             </div>
 
-            {/* Footer */}
+            {/* Footer wrapped in a relative container to ensure it clears the ExploreMore cards */}
             <div className='relative z-10'>
                 <Footer />
             </div>
@@ -159,4 +159,4 @@ const Home = () => {
     )
 }
 
-export default Home
+export default Home;
