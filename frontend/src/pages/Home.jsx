@@ -133,7 +133,7 @@ const Home = () => {
                         backgroundGradient={"code-block2-grad"}
                     />
 
-                    {/* Course Sliders - Spaced correctly to avoid Footer overlap */}
+                    {/* Course Sliders */}
                     <div className='mx-auto box-content w-full px-0 py-16'>
                         <h2 className='text-white mb-6 text-2xl font-semibold'>Popular Picks for You 🏆</h2>
                         <Course_Slider Courses={CatalogPageData?.selectedCategory?.courses} />
@@ -144,14 +144,14 @@ const Home = () => {
                         <Course_Slider Courses={CatalogPageData?.mostSellingCourses} />
                     </div>
 
-                    {/* Explore More Section - Needs bottom margin before Footer */}
-                    <div className='mb-24 w-full'>
+                    {/* Explore More - THE CRITICAL FIX IS HERE */}
+                    <div className='relative w-full pb-[150px] lg:pb-[250px]'> 
                         <ExploreMore />
                     </div>
                 </div>
             </div>
 
-            {/* Footer - Guaranteed to stay below all relative content */}
+            {/* Footer */}
             <div className='relative z-10'>
                 <Footer />
             </div>
