@@ -72,16 +72,16 @@ const Home = () => {
     }, [dispatch]);
 
     return (
-        <React.Fragment>
-            <div>
-                <div className="w-full h-[450px] md:h-[650px] absolute top-0 left-0 opacity-[0.3] overflow-hidden object-cover ">
-                    <img src={backgroundImg} alt="Background" className="w-full h-full object-cover " />
-                    <div className="absolute left-0 bottom-0 w-full h-[250px] opacity_layer_bg "></div>
-                </div>
+        <div className="flex flex-col min-h-screen"> {/* Wrapper to force footer to bottom */}
+            {/* Background Image Container */}
+            <div className="absolute top-0 left-0 w-full h-[450px] md:h-[650px] opacity-[0.3] overflow-hidden">
+                <img src={backgroundImg} alt="Background" className="w-full h-full object-cover" />
+                <div className="absolute left-0 bottom-0 w-full h-[250px] opacity_layer_bg"></div>
             </div>
 
-            <div className='relative'>
-                <div className='relative h-[450px] md:h-[550px] justify-center mx-auto flex flex-col w-11/12 max-w-maxContent items-center text-white '>
+            <div className='relative flex-grow'>
+                {/* Section 1 */}
+                <div className='relative h-[450px] md:h-[550px] justify-center mx-auto flex flex-col w-11/12 max-w-maxContent items-center text-white'>
                     <Link to={"/signup"}>
                         <div className='z-0 group p-1 mx-auto rounded-full bg-richblack-800 font-bold text-richblack-200 transition-all duration-200 hover:scale-95 w-fit'>
                             <div className='flex flex-row items-center gap-2 rounded-full px-10 py-[5px] transition-all duration-200 group-hover:bg-richblack-900'>
@@ -101,7 +101,8 @@ const Home = () => {
                     </div>
                 </div>
 
-                <div className='relative mx-auto flex flex-col w-11/12 max-w-maxContent items-center text-white justify-between'>
+                {/* Content Sections */}
+                <div className='relative mx-auto flex flex-col w-11/12 max-w-maxContent items-center text-white'>
                     <CodeBlocks
                         position={"lg:flex-row"}
                         heading={<div className='text-3xl lg:text-4xl font-semibold'>Unlock Your <HighlightText text={"coding potential "} /> with our online courses</div>}
@@ -132,17 +133,27 @@ const Home = () => {
                         backgroundGradient={"code-block2-grad"}
                     />
 
-                    <div className='mx-auto box-content w-full max-w-maxContentTab px- py-12 lg:max-w-maxContent'>
-                        <h2 className='text-white mb-6 text-2xl '>Popular Picks for You 🏆</h2>
+                    {/* Course Sliders */}
+                    <div className='mx-auto box-content w-full px-0 py-12'>
+                        <h2 className='text-white mb-6 text-2xl font-semibold'>Popular Picks for You 🏆</h2>
                         <Course_Slider Courses={CatalogPageData?.selectedCategory?.courses} />
                     </div>
                     
+                    {/* Add this back if you want to fix the gap in Screenshot 1 */}
+                    <div className='mx-auto box-content w-full px-0 py-12'>
+                        <h2 className='text-white mb-6 text-2xl font-semibold'>Top Enrollments Today 🔥</h2>
+                        <Course_Slider Courses={CatalogPageData?.mostSellingCourses} />
+                    </div>
+
                     <ExploreMore />
                 </div>
+            </div>
+            {/* Proper separation for Footer */}
+            <div className="relative z-10">
                 <Footer />
-            </div >
-        </React.Fragment>
+            </div>
+        </div>
     )
 }
 
-export default Home
+export default Home;
