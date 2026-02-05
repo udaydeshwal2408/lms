@@ -39,8 +39,8 @@ import backgroundImg10 from '../assets/Images/random bg img/coding bg10.jpg'
 import backgroundImg111 from '../assets/Images/random bg img/coding bg11.jpg'
 
 const randomImges = [
-    backgroundImg1, backgroundImg2, backgroundImg3, backgroundImg4, 
-    backgroundImg5, backgroundImg6, backgroundImg7, backgroundImg8, 
+    backgroundImg1, backgroundImg2, backgroundImg3, backgroundImg4,
+    backgroundImg5, backgroundImg6, backgroundImg7, backgroundImg8,
     backgroundImg9, backgroundImg10, backgroundImg111,
 ];
 
@@ -59,8 +59,8 @@ const Home = () => {
         const fetchCatalogPageData = async () => {
             try {
                 const categories = await fetchCourseCategories();
-                const category_id = categories?.[0]?._id;
-                if (category_id) {
+                if (categories.length > 0) {
+                    const category_id = categories[Math.floor(Math.random() * categories.length)]._id;
                     const result = await getCatalogPageData(category_id, dispatch);
                     setCatalogPageData(result);
                 }
@@ -136,9 +136,9 @@ const Home = () => {
                     {/* Course Sliders */}
                     <div className='mx-auto box-content w-full px-0 py-12'>
                         <h2 className='text-white mb-6 text-2xl font-semibold'>Popular Picks for You 🏆</h2>
-                        <Course_Slider Courses={CatalogPageData?.selectedCategory?.courses} />
+                        <Course_Slider Courses={CatalogPageData?.selectedCategory?.courses?.length > 0 ? CatalogPageData?.selectedCategory?.courses : CatalogPageData?.differentCategory?.courses} />
                     </div>
-                    
+
                     <div className='mx-auto box-content w-full px-0 py-12'>
                         <h2 className='text-white mb-6 text-2xl font-semibold'>Top Enrollments Today 🔥</h2>
                         <Course_Slider Courses={CatalogPageData?.mostSellingCourses} />
